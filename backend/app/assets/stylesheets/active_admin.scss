@@ -1,0 +1,109 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+// @import "flattened_active_admin/variables";
+// @import "flattened_active_admin/mixins";
+// @import "flattened_active_admin/base";
+@import "arctic_admin/base";
+@import "bourbon";
+@import "fancybox";
+@import "jquery.fancybox";
+@import "jquery.fancybox-buttons";
+@import "jquery.fancybox-thumbs";
+@import "active_admin/searchable_select";
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+.index.admin_functional_expectation_descriptions form ul{
+    list-style: disc;
+}
+
+#quick-errors{
+  color: red;
+}
+
+.display-inline-block{
+  display: inline-block;
+}
+
+.custom-input-new-modal{
+  li label {
+    display: block;
+    width: 18.5vw;
+    float: left;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #5E6469;
+    padding: 10px;
+  }
+}
+
+.modal-open-button{
+  padding: 10px;
+}
+
+.left-padding{
+  padding-left: 0.5%;
+}
+
+.input-padding{
+  margin-left: 16%;
+  width: 42%;
+}
+
+.lable-left-padding{
+  margin-left: 20%;
+  margin-top: 0.5%;
+}
+
+.toolbar{
+  ul li:nth-child(1){
+    display: none !important;
+  }
+}
+
+
+#header ul.tabs > li ul {
+  background-color: #eaebec !important;
+}
+
+#header ul.tabs > li.has_nested.current > a {
+  background-color: #e6e8e9 !important;
+  padding-right: 20px;
+}
+
+#header ul.tabs > li.current > a {
+  color: #295EB2 !important;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #e6e8e9 !important;
+}
+
+#title_bar .action_items span.action_item > a, #title_bar .action_items span.action_item > .dropdown_menu > a {
+  background: #295EB2 !important;
+  color: #FFFFFF !important;
+}
+
+form input[type=submit] {
+  background: #295EB2 !important;
+  color: #FFFFFF !important;
+}
+
+form.filter_form a.clear_filters_btn {
+  background: #C4C4C4 !important;
+  color: #646464 !important;
+}
+
+#header ul.tabs > li ul li a:hover {
+  color: #5E6469 !important;
+  background: #FFFFFF !important;
+  display: block;
+}

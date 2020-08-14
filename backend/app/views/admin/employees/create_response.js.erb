@@ -1,0 +1,8 @@
+<% if @employee.errors.any? %>
+    html = "<%= escape_javascript(render 'admin/error_messages', object: @employee) %>";
+    $('#quick-errors').html(html);
+<% else %>
+    $('#quick-success').html('New drawing successfully created.');
+    $('#item_drawing_id').html("<%= escape_javascript(render 'admin/employees/employee') %>");
+    $.fancybox.close();
+<% end %>

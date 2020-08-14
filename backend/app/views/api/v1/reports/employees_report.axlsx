@@ -1,0 +1,12 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Employees Report") do |sheet|
+sheet.add_row ['Name', 'No. of taks done', 'No. of tasks inline', 'No. of tasks delayed','Average delay time(min)']
+  @employee_report.each do |employee|
+    sheet.add_row [employee['employee_full_name'], 
+    employee['completed_jobs_count']? employee['completed_jobs_count']:0, 
+    employee['in_progress_jobs_count']? employee['in_progress_jobs_count']:0,
+    employee['delayed_jobs_count']?employee['delayed_jobs_count']:0,
+    employee['avg_delay_time_in_mins']?employee['avg_delay_time_in_mins']:0
+    ]
+  end
+end

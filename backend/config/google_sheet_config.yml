@@ -1,0 +1,24 @@
+defaults: &defaults
+  vendor_upload: "1w1pdRl8EzcMfOd-leTtajgpM4U-u1EVk6ylGKq3fF4o"
+  po_upload: "1uVRJOJ-7ysgBWzez3MYHZZ7AXbRQSbhUE-huU2LgvcQ"
+  item_upload: "1OZrdnEOBi9atrKVPYt6G7nAgb2TACHED9mZj_6dXVfM"
+  employee_upload: "1obs0JgrE-nBsK3Lu3TLXL2Z10y0g7QSZYmAg7kPyeLE"
+  country_city_upload: "1COYKZ586dVeUJ4bRFD_4oTzQzxnEbQpcO6SB0E0zYio"
+
+  organization: "Enflow"
+  credentials: "credentials.json"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  vendor_upload: "1w1pdRl8EzcMfOd-leTtajgpM4U-u1EVk6ylGKq3fF4o"
+  po_upload: "1uVRJOJ-7ysgBWzez3MYHZZ7AXbRQSbhUE-huU2LgvcQ"
+  item_upload: "1OZrdnEOBi9atrKVPYt6G7nAgb2TACHED9mZj_6dXVfM"
+  employee_upload: "1obs0JgrE-nBsK3Lu3TLXL2Z10y0g7QSZYmAg7kPyeLE"
+  country_city_upload: "1COYKZ586dVeUJ4bRFD_4oTzQzxnEbQpcO6SB0E0zYio"
+  organization: "Enflow"
+  credentials: "credentials.json"

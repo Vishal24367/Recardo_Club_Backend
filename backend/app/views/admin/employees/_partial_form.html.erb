@@ -1,0 +1,19 @@
+<%= semantic_form_for [:admin, @employee], remote: false, builder: ActiveAdmin::FormBuilder do |f| %>
+    <%= f.inputs 'Employee' do %>
+      <%= f.input :firstname %>
+      <%= f.input :lastname %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :designation %>
+      <%= f.input :department_id, as: :select, collection: Department.all, allow_blank: false %>
+      <div>
+        <% f.has_many :employee_roles, heading: "Roles", allow_destroy:  true do |r| %>
+          <% r.input :role, as: :searchable_select, collection: Role.all.order('LOWER(name)').collect{ |role| [role.name.gsub("_", " ").titleize, role.id] } %>
+          <% r.input :ar_class%>
+        <% end %>
+      </div>
+      <br>
+      <div></div>
+    <% end %>
+    <%= f.actions %>
+<% end %>

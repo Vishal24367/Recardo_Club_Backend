@@ -1,0 +1,12 @@
+<div id="#modal">
+  <section id="quick-errors">
+    <% render 'admin/error_messages', object: @employee %>
+  </section>
+  <section id="quick-success">
+  </section>
+  <section class="form-fluid">
+    <%= semantic_form_for @employee, url: admin_employee_path(:id=>@employee.id), remote: true, builder: ActiveAdmin::FormBuilder do |f| %>
+      <%= render 'form', object: f %>
+    <% end %>
+  </section>
+</div>

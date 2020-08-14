@@ -1,0 +1,14 @@
+#configuration for sidekiq to listen to paperclip queue for working of delayed_paperclip
+---
+:strict: false
+:concurrency:  25
+:logfile: log/enflow_sidekiq.log
+:queues:
+  - [enflow_default, 5]
+  - [enflow_email, 5]
+production:
+  :concurrency: 2
+  :pidfile: tmp/pids/sidekiq_production.pid
+  :queues:
+    - [enflow_default, 5]
+    - [enflow_email, 5]

@@ -1,0 +1,7 @@
+<%= object.inputs 'Permissions' do %>
+  <%= object.semantic_errors %>
+  <% object.has_many :employee_roles, heading: "Roles", allow_destroy:  true do |r| %>
+    <% r.input :role, as: :searchable_select, collection: Role.all.order('LOWER(name)').collect{ |role| [role.name.gsub("_", " ").titleize, role.id] } %>
+  <% end %>
+<% end %>
+<%= object.actions %>

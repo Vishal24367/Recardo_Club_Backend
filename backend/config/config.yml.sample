@@ -1,0 +1,40 @@
+# this file should have indent of 2 spaces
+
+# general/default configuration
+defaults: &defaults
+  host:
+    url: 'boilerplate.navyuginfo.com'
+  mailer:
+    enable_starttls_auto: true
+    address: 'smtp.gmail.com'
+    port: '587'
+    authentication: 'plain'
+    username: 'lcms.navyug@gmail.com'
+    password: 'new life'
+    recipient: 'abhinav.choudhary@navyuginfo.com'
+  user_style_choice: { medium: "300x300>", large: "1000x1000>" }      #syntax=> model_name_style_choice: { style_name: "resolution"}
+
+# Environment Specific Configuration
+development:
+  <<: *defaults           
+  app_url: "http://127.0.0.1:4200"
+  host:
+    url: 'localhost:3000'
+  cdn_url: ""
+
+test:
+  <<: *defaults
+  cdn_url: ""
+
+production:
+  <<: *defaults
+  mailer:
+    enable_starttls_auto: true
+    address: 'smtp.mandrillapp.com'
+    port: '587'
+    authentication: 'plain'
+    username: 'hardik.patel@navyuginfo.com'
+    password: 'xI9woDVsdEPoD9Mx4JmuBA'
+    recipient: 'info@navyuginfo.com'
+
+  cdn_url: "http://d1mwxpp88k955w.cloudfront.net/"
